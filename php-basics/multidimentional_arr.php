@@ -49,15 +49,36 @@ $ventas = [
 mostrar($ventas);
 // 04. Crear un array bidimensional asociativo de arrays asociativos
 $libros = [
-    "Gabriel Garcia Marquez" => ["Cien años de soledad"=>1967,"Crónicas de una muerte anunciada" => 1985, "El amor en tiempos de cólera" => 1985],
-    "Juan Gomez Jurado" => [
-        "Reina Roja" => 2018, "Loba Negra" => 2019, "Rey Blanco" => 2020],
-    "Maria Dueña" => ["El tiempo entre costuras" => 2009, "Misión olvido" => 2012,
-    "La templanza" => 2015]
+    "Gabriel Garcia Marquez" => ["Cien años de soledad"=>1967,
+                                "Crónicas de una muerte anunciada" => 1985,
+                                "El amor en tiempos de cólera" => 1985],
+    "Juan Gomez Jurado" => ["Reina Roja" => 2018, 
+                            "Loba Negra" => 2019, 
+                            "Rey Blanco" => 2020],
+    "Maria Dueña" => ["El tiempo entre costuras" => 2009, 
+                      "Misión olvido" => 2012,
+                      "La templanza" => 2015]
     ];
 echo tabla($libros);
 // 05. Crear un array bidimensional vacío NxM.
+$b = [[]];
+$b[0][0] = "valor";
+$b[0][1] = "valor1";
+$b[1][0] = "Casilla";
+mostrar($b);
 // 06. Rellenar un array bidimensional vacío NxM.
+function rellenar($n,$m){
+    for ($i=0; $i < $n; $i++) { 
+        # Primer indice
+        for ($j=0; $j < $m; $j++) { 
+            # Segundo indice
+            $array[$i][$j] = "$i,$j";
+        }
+    }
+    return $array;
+}
+
+mostrar(rellenar(3,4));
 // 07. Reto: Crear un array bidimensional que simule un tablero de Ajedrez.
 
 // video https://www.youtube.com/watch?v=AiQNGlj40rs&list=PLR88WBeFO8uYE-KJC4gxurHa2eUGNfeN3&index=18
