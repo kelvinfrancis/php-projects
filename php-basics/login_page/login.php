@@ -13,7 +13,6 @@ $_SESSION["password"] = "1234";
     <title>Login PHP</title>
 </head>
 <body>
-    <h2>Formulario de login</h2>
 </body>
 </html>
 
@@ -36,13 +35,14 @@ if (isset($_POST["btn_login"])) {
 }
 
 if ($_SESSION["ingresar"] == "si") {
-    echo "<p style='color: green;'>Bienvenido " . $_POST["user"] . "!</p>";
+    echo "<div class='login'><p style='color: green;'>Bienvenido " . $_POST["user"] . "!</p></div>";
 }else {
     $url = $_SERVER["REQUEST_URI"];
 
     // Formulario
 print <<<FORM
-<div id="login">
+<div class="login">
+<h2>Formulario de login</h2>
 <form action="$url" method="post">
 <label for="user">Usuario: </label>
 <input type="text" name="user" id="usr">
